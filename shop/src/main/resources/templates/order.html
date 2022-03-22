@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+	td {
+	text-align: center;
+	font-family: 고딕,굴림;
+	}
+	table {
+	width:800px;
+	}
+</style>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<th:block>
+		<tbody>
+			<table border="1">
+				<tr>
+					<th>순번</th>
+					<th>고객 아이디</th>
+					<th>고객 명</th>
+					<th>고객 등급</th>
+					<th>제품 코드</th>
+					<th>주문 수량</th>
+					<th>주문 주소</th>
+					<th>주문 일자</th>
+				</tr>
+				<tr th:each="item : ${list}" >
+					<td th:text="${item.id}"></td>
+					<td th:text="${item.customers.id}"></td>
+					<td th:text="${item.customers.name}"></td>
+					<td th:text="${item.customers.grade}"></td>
+					<td th:text="${item.name}"></td>
+					<td th:text="${item.count}"></td>
+					<td th:text="${item.dest}"></td>
+					<td th:text="${item.ordDate}"></td>
+				</tr>
+			</table>
+		</tbody>
+	</th:block>
+
+</body>
+</html>
